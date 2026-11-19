@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ title }}</h1>
+    <div class="post-meta-row">
+      <span>{{ date.strftime('%B %d, %Y') }}</span>
+      <span>•</span>
+      <span>{{ reading_time }} min read</span>
+      {% if tags %}
+      <span>•</span>
+      <div class="post-tags">
+        {% for tag in tags %}
+        <span class="tag-badge">#{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="post-content">
+    {{ content | safe }}
+  </div>
+
+  <footer class="post-footer">
+    <a href="/posts/">← Back to all articles</a>
+    <a href="https://github.com/CipherZ3r0" target="_blank" rel="noopener">Discuss / View on GitHub</a>
+  </footer>
+</article>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section-block">
+  <div class="section-header">
+    <h2>Engineering Articles & Technical Notes</h2>
+    <span class="card-meta">{{ posts|length }} publication{{ 's' if posts|length != 1 else '' }}</span>
+  </div>
+
+  <div class="card-stack">
+    {% for post in posts %}
+    <article class="editorial-card">
+      <h3><a href="/posts/{{ post.slug }}/">{{ post.title }}</a></h3>
+      <div class="card-meta">
+        <span>{{ post.date.strftime('%B %d, %Y') }}</span> • <span>{{ post.reading_time }} min read</span>
+        {% if post.tags %}
+        • {% for tag in post.tags %}<span class="tag-badge">#{{ tag }}</span>{% endfor %}
+        {% endif %}
+      </div>
+      <p class="card-desc">{{ post.description }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

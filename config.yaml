@@ -1,0 +1,12 @@
+# Configuration for the static site generator
+
+site_name: "Nilax Modi (CipherZ3r0)"
+author: "Nilax Modi"
+base_url: "https://cipherz3r0.github.io"
+theme:
+  default: light
+  options: [light, dark]
+
+# Content settings
+posts_path: "content/posts"
+output_path: "site"

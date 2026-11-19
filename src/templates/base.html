@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ title if title else "Nilax Modi (CipherZ3r0)" }}</title>
+    <meta name="description" content="{{ description if description else 'Nilax Modi – Systems, Backend, Performance & Open Source Engineering.' }}" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ title if title else 'Nilax Modi (CipherZ3r0)' }}" />
+    <meta property="og:description" content="{{ description if description else 'Nilax Modi – Systems, Backend, Performance & Open Source Engineering.' }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ url if url else 'https://cipherz3r0.github.io' }}" />
+
+    <link rel="stylesheet" href="/assets/style.css" />
+    <script src="/assets/script.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav">
+            <div class="logo-group">
+                <a href="/" class="logo">Nilax Modi<span class="handle">/CipherZ3r0</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Overview</a></li>
+                <li><a href="/posts/">Articles</a></li>
+                <li><a href="/#projects">Projects</a></li>
+                <li><a href="/#open-source">Open Source</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#contact">Contact</a></li>
+                <li><button id="theme-toggle" class="theme-btn" aria-label="Toggle dark/light theme">🌙</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="site-main">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; {{ year }} Nilax Modi (CipherZ3r0). Built with minimalist Python static generation.</p>
+    </footer>
+</body>
+</html>
